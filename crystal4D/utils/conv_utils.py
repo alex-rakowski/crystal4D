@@ -78,7 +78,7 @@ def cross_correlate_iff(x):
 #MCDropout
 class MonteCarloDropout(tf.keras.layers.Dropout):
     def call(self, inputs):
-        return super().call(inputs, training=True)
+        return super().call(inputs, training=False)
 
 def conv2d_block(input_tensor, n_filters, n_depth=2, input_channel=1, kernel_size = 3, activation = 'relu', dp_rate = 0.1, batchnorm = True):
     """Function to add n (depth) convolutional layers with the parameters passed to it"""
